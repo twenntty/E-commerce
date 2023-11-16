@@ -18,15 +18,8 @@ public class User {
         cart.put(product, cart.getOrDefault(product, 0) + quantity);
     }
 
-    public void removeFromCart(Product product, int quantity) {
-        if (cart.containsKey(product)){
-            int updatedQuantity = cart.get(product) - quantity;
-            if (updatedQuantity > 0) {
-                cart.put(product, updatedQuantity);
-            } else {
-                cart.remove(product);
-            }
-        }
+    public void removeFromCart(Product product) {
+        cart.remove(product);
     }
 
     public Integer getId() {

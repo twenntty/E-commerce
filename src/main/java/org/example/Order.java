@@ -1,6 +1,6 @@
 package org.example;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Order {
     private Integer id;
@@ -28,6 +28,14 @@ public class Order {
 
     public Integer getId() {
         return id;
+    }
+
+    public void addProduct(Product product, int quantity) {
+        orderDetails.put(product, quantity);
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
     @Override

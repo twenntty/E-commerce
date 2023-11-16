@@ -74,15 +74,6 @@ public class ECommerceDemo {
         System.out.println();
     }
 
-    public static void displayAvailableProducts(ECommercePlatform platform) {
-        System.out.println("Available Products:");
-        for (Product product : platform.getProducts().values()) {
-            if (product.getStock() > 0) {
-                System.out.println(product);
-            }
-        }
-    }
-
     public static void displayRecommendations(ECommercePlatform platform, User user) {
         List<Product> recommendations = platform.recommendProducts(user);
 
