@@ -34,7 +34,11 @@ public class User {
     }
 
     public Map<Product, Integer> getCart() {
-        return null;
+        return cart;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     @Override

@@ -1,11 +1,24 @@
 package org.example;
 import java.util.Map;
+import java.util.HashMap;
 
 public class Order {
     private Integer id;
     private Integer userId;
     private Map<Product, Integer> orderDetails;
     private double totalPrice;
+
+    public Order(int id, int userId, Map<Product, Integer> orderDetails) {
+        this.id = id;
+        this.userId = userId;
+        this.orderDetails = orderDetails;
+    }
+
+    public Order() {
+        this.id = 0;
+        this.userId = 0;
+        this.orderDetails = new HashMap<>();
+    }
 
     public void calculateTotalPrice() {
         totalPrice = orderDetails.entrySet().stream()

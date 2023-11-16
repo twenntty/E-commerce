@@ -25,7 +25,7 @@ public class ECommercePlatform {
     }
 
     public void createOrder(User user, Map<Product, Integer> orderDetails) {
-        Order order = new Order();
+        Order order = new Order(orders.size() + 1, user.getId(), orderDetails);
         order.calculateTotalPrice();
         orders.put(order.getId(), order);
     }
@@ -35,6 +35,7 @@ public class ECommercePlatform {
         for (Product product : products.values()) {
             System.out.println(product);
         }
+        System.out.println();
     }
 
     public  void displayUsers() {
@@ -42,6 +43,7 @@ public class ECommercePlatform {
         for (User user : users.values()) {
             System.out.println(user);
         }
+        System.out.println();
     }
 
     public void displayOrders() {
@@ -49,12 +51,7 @@ public class ECommercePlatform {
         for (Order order : orders.values()) {
             System.out.println(order);
         }
-    }
-
-    public void updateProductStock(Product product, int quantity) {
-        if (products.containsKey(product.getId())) {
-            product.setStock(product.getStock() + quantity);
-        }
+        System.out.println();
     }
 
     public List<Product> recommendProducts(User user) {

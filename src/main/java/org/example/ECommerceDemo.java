@@ -60,6 +60,7 @@ public class ECommerceDemo {
         for (Product product : productList) {
             System.out.println(product);
         }
+        System.out.println();
     }
 
     public static void displaySortedProductsByStock(ECommercePlatform platform) {
@@ -71,6 +72,7 @@ public class ECommerceDemo {
         for (Product product : productList) {
             System.out.println(product);
         }
+        System.out.println();
     }
 
     public static void displayAvailableProducts(ECommercePlatform platform) {
@@ -85,9 +87,10 @@ public class ECommerceDemo {
     public static void displayRecommendations(ECommercePlatform platform, User user) {
         List<Product> recommendations = platform.recommendProducts(user);
 
-        System.out.println("Recommended Products:");
+        System.out.println("Recommendations for " + user.getUsername() + ":");
         for (Product product : recommendations) {
             System.out.println(product);
         }
+        System.out.println();
     }
 }
