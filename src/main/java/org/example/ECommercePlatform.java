@@ -72,7 +72,11 @@ public class ECommercePlatform {
         return recommendations;
     }
 
-    public Collection<Product> getProducts() {
-        return products.values();
+    public Map<Integer, Product> getProducts() {
+        return products;
+    }
+
+    public User getUserById(int userId) {
+        return users.get(userId);
     }
 }

@@ -3,7 +3,7 @@ import java.util.Comparator;
 
 public class ProductNAmeComparator implements Comparator<Product> {
     @Override
-    public int compare(Product product1, Product product2) {
-        return product1.getName().compareTo(product2.getName());
+    public int compare(Product p1, Product p2) {
+        return p1.getName().compareTo(p2.getName());
     }
 }

@@ -1,9 +1,9 @@
 package org.example;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Map;
 
 public class ECommerceDemo {
     public static void main(String[] args) {
@@ -49,10 +49,12 @@ public class ECommerceDemo {
         displayRecommendations(platform, user);
     }
 
+
+
     public static void displaySortedProductsByName(ECommercePlatform platform) {
-        Collection<Product> productCollection = platform.getProducts();
-        List<Product> productList = new ArrayList<>(productCollection);
-        Collections.sort(productList, new ProductNameComparator());
+        Map<Integer, Product> productMap = platform.getProducts();
+        List<Product> productList = new ArrayList<>(productMap.values());
+        Collections.sort(productList, new ProductNAmeComparator());
 
         System.out.println("Products Sorted by Name:");
         for (Product product : productList) {
@@ -61,8 +63,8 @@ public class ECommerceDemo {
     }
 
     public static void displaySortedProductsByStock(ECommercePlatform platform) {
-        Collection<Product> productCollection = platform.getProducts();
-        List<Product> productList = new ArrayList<>(productCollection);
+        Map<Integer, Product> productMap = platform.getProducts();
+        List<Product> productList = new ArrayList<>(productMap.values());
         Collections.sort(productList, new ProductStockComparator());
 
         System.out.println("Products Sorted by Stock:");
